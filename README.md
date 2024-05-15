@@ -9,3 +9,4 @@ Optimized Performance: Implement efficient front-end technologies and techniques
 Accessibility and Inclusivity: Ensure that the interface adheres to accessibility standards, making it usable and navigable for users with diverse abilities and impairments.
 
 Scalability and Compatibility: Design a flexible and modular front-end architecture that can seamlessly integrate with evolving backend functionalities and accommodate future enhancements.
+this  is our group poject.
