@@ -1,0 +1,4 @@
+Design and develop an intuitive and efficient front-end interface for a search engine platform, prioritizing user experience, accessibility, and scalability."
+
+
+
