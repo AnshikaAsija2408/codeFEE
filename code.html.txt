@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Google Search Engine</title>
+    </head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+      main{
+        background-image: url(https://img.freepik.com/free-vector/abstract-digital-grid-vector-black-background_53876-111550.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 800px;
+      }
+        .search{
+            margin:0 auto;
+            text-align:center;
+        }
+        .search h4{
+            margin:50px 0px 20px 0px;
+            font-size:30px;
+        }
+        .search input[type=text]{
+            width:60% ;
+            border-radius:30px;
+            outline:none;
+            padding-left:20px;
+            padding-top:15px;
+            padding-buttom:10px;
+            border: solid 1px red;
+        }
+        .search-input{
+          height: 40px;
+          width: 300px;
+        }
+        .search a{
+            background-color:white;
+            margin-top:20px;
+            width:100px;
+            text-align:center;
+            margin-left: 5px;
+        }
+        .search a:hover{
+            background-color:white;
+        }
+        .search-box{
+          margin-left: 400px;
+          margin-top: 20px;
+        }
+        img{
+          margin-top: 90px;
+          margin-left:600px ;
+        }
+        .credit{
+          margin-top: 20px ;
+          margin-left: 400px;
+          color: chartreuse;
+          
+        
+          /* background-color: aqua; */
+          
+          
+        }
+        article {
+  --img-scale: 1.001;
+  --title-color: black;
+  --link-icon-translate: -20px;
+  --link-icon-opacity: 0;
+  position: relative;
+  border-radius: 16px;
+  box-shadow: none;
+  background: #fff;
+  transform-origin: center;
+  transition: all 0.4s ease-in-out;
+  overflow: hidden;
+}
+
+article a::after {
+  position: absolute;
+  inset-block: 0;
+  inset-inline: 0;
+  cursor: pointer;
+  content: "";
+}
+
+/* basic article elements styling */
+article h2 {
+  margin: 0 0 18px 0;
+  font-family: "Bebas Neue", cursive;
+  font-size: 1.9rem;
+  letter-spacing: 0.06em;
+  color: var(--title-color);
+  transition: color 0.3s ease-out;
+}
+
+figure {
+  margin: 0;
+  padding: 0;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+article img {
+  max-width: 100%;
+  transform-origin: center;
+  transform: scale(var(--img-scale));
+  transition: transform 0.4s ease-in-out;
+}
+
+.article-body {
+  padding: 24px;
+}
+
+article a {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  color: #28666e;
+}
+
+article a:focus {
+  outline: 1px dotted #28666e;
+}
+
+article a .icon {
+  min-width: 24px;
+  width: 24px;
+  height: 24px;
+  margin-left: 5px;
+  transform: translateX(var(--link-icon-translate));
+  opacity: var(--link-icon-opacity);
+  transition: all 0.3s;
+}
+
+/* using the has() relational pseudo selector to update our custom properties */
+article:has(:hover, :focus) {
+  --img-scale: 1.1;
+  --title-color: green;
+  --link-icon-translate: 0;
+  --link-icon-opacity: 1;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+
+/**** 
+Generic layout (demo looks)
+****/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 48px 0;
+  font-family: "Figtree", sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  background-image: linear-gradient(45deg, #7c9885, #b5b682);
+  min-height: 100vh;
+}
+
+.articles {
+  display: grid;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 24px;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+@media screen and (max-width: 960px) {
+  article {
+    container: card/inline-size;
+  }
+  .article-body p {
+    display: none;
+  }
+}
+
+@container card (min-width: 380px) {
+  .article-wrapper {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 16px;
+  }
+  .article-body {
+    padding-left: 0;
+  }
+  figure {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  figure img {
+    height: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+  }
+}
+
+.sr-only:not(:focus):not(:active) {
+  clip: rect(0 0 0 0); 
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap; 
+  width: 1px;
+}
+    </style>
+    <body>
+      <main>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#intro">About Us</a>
+                </li>
+                <li class="nav-item dropdown">
+                
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled" href="login.html">login</a>
+                </li>
+              </ul>
+              <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+              </form>
+            </div>
+          </nav>
+          <img src="https://collegeengine.com/wp-content/uploads/2020/07/CE_fullLogo2.png" width="400 px">
+          <div class="container">
+            <form action="https://www.google.com/search" method="GET">
+                <div class="search-box">
+                    <input class="search-input" type="text" name="q" placeholder="Search Google">
+                    <button class="search-button" type="submit" onclick="showAlert()">Google Search</button>
+          </div>
+        </main>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+
+        <div id="intro">
+
+        <section class="articles">
+          <article>
+            <div class="article-wrapper">
+              <figure>
+                <img src="https://picsum.photos/id/1005/800/450" alt="" />
+                
+              </figure>
+              <div class="article-body">
+                <h2>ANSHIKA ASIJA</h2>
+                <p>
+                  Hi,I am ANSHIKA ASIJA and I am student of CSE at hitkara University and My ROLL NO IS 2301990288 and i contributed to this 
+project by making almost whole ppt's and reports by myself and I got little helpby my project mate ANSH ARORA.
+                </p>
+                <a href="#" class="read-more">
+                  Read more <span class="sr-only">about this is some title</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+          <article>
+        
+            <div class="article-wrapper">
+              <figure>
+                <img src="https://picsum.photos/id/1005/800/450" alt="" />
+              </figure>
+              <div class="article-body">
+                <h2>Ansh Arora(Group Leader)</h2>
+                <p>
+                  Hi,I am ANSH ARORA and I am a national badminton player and chitkara university men's singles champion, I am student of CSE at 
+                  Chitkara University and My ROLL NO IS 2301990286 and i contributed to this project by making almost whole code by myself and I
+                  got little help in javascript section by my project mate ANSHIKA ASIJA .
+                </p>
+                <a href="#" class="read-more">
+                  Read more <span class="sr-only">about this is some title</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+          <article>
+        
+            <div class="article-wrapper">
+              <figure>
+                <img src="https://picsum.photos/id/103/800/450" alt="" />
+              </figure>
+              <div class="article-body">
+                <h2>Ansh Mehta</h2>
+                <p>
+                  Hi,I am ANSH MEHTA student of CSE at Chitkara University and My ROLL NO IS 2301990287 and i contributed to this project by
+                  planning the whole explaination part for team.
+                </p>
+                <a href="#" class="read-more">
+                  Read more <span class="sr-only">about this is some title</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+        </section>
+        </div>
+    </body>
+</html>
